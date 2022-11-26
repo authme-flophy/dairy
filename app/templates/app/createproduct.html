@@ -1,0 +1,39 @@
+{% extends "app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+</head>
+<body>
+    <div class="container">
+
+        <section>
+            <div id="container_demo">
+                <a class="hiddenanchor" id="toregister"></a>
+                <a class="hiddenanchor" id="tologin"></a>
+                <div id="wrapper">
+                    <div id="login" class="animate form">
+                            <div class="container">
+                              <h2><b> Create Product </b></h2><br>
+                              <form action="{% url 'app-createproduct' %}" method="POST" autocomplete="on">
+                                {% csrf_token %}
+                              <br>  {{ form }} <br>
+
+                                <div style="margin-top:2rem" class="form-group">
+                                  <p>
+                                      <input href="{% url 'app-product' %}" class="btn btn-success" role="button"
+                                          type="submit" value="Create" name="register">
+                                  </p>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
+
+{% endblock content %}

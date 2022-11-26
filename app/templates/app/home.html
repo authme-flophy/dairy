@@ -1,0 +1,11 @@
+{% extends "app/base.html" %} {% block content %}
+<h2>Hello. Welcome to My Dairy Inventory</h2>
+<br />
+<br />
+
+<p class="change_link">
+  <b> Do You Want to View Products ? </b>
+  <a href="{% url 'app-product' %}" class="to_register"><b> Products </b></a>
+</p>
+
+{% endblock content %}

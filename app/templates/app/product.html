@@ -1,0 +1,66 @@
+{% extends "app/base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title</title>
+  </head>
+  <body>
+    <br>
+    <div class="header">
+      <b>List of Products</b>
+
+    </div><br>
+
+    <table border= "2" style= "width:800px;margin:auto">
+      <thead>
+        <tr>
+          <th style="padding-left:20px; "> No.
+            <br>
+            <br>
+          </th>
+          <th style="padding-left:20px; "> Customer
+              <br>
+              <br>
+          </th>
+          <th style="padding-left:20px; "> Description
+              <br>
+              <br>
+          </th>
+          <th style="padding-left:20px; "> Gender
+              <br>
+              <br>
+          </th>
+          <th style="padding-left:20px; "> Date
+              <br>
+              <br>
+          </th>
+
+        </tr>
+      </thead>
+      <tbody>
+    {% for product in products %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ product.customer }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.gender }}</td>
+          <td>{{ product.date }}</td>
+        </tr>
+    {% endfor %}
+      </tbody>
+
+    </table>
+    <br>
+    <br>
+
+    <p class="change_link"><b>
+        Create Another Product ? </b>
+        <a href="{% url 'app-createproduct' %}" class="to_register"><b> Create Product </b></a>
+    </p>
+
+  </body>
+</html>
+{% endblock content %}
